@@ -32,7 +32,7 @@ const Checkout = () => {
   });
 
   // This would typically be stored in an environment variable
-  const GOOGLE_SHEETS_WEBHOOK_URL = "YOUR_GOOGLE_SHEETS_WEBHOOK_URL";
+  const GOOGLE_SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzTOsffHcB5Wr-1zjvXUjE9KZbV7EN2YKtiY2DltTmyh6jHAPTz3YFNslY7jFyrbAT5GA/exec";
 
   const shippingCost = 4.99;
   const subtotal = getCartTotal();
@@ -81,7 +81,6 @@ const Checkout = () => {
           duration: 5000,
         });
 
-        // Clear cart and redirect to success page
         clearCart();
         navigate('/order-success');
       } else {
