@@ -53,7 +53,7 @@ export function StickyCheckoutFooter({
           )}
         </div>
         <Button asChild size="lg" className="px-8">
-          <Link to={`/cart}`}>
+          <Link to={`/cart`}>
             <ShoppingCart className="mr-2 h-4 w-4" />
             Go to Checkout
           </Link>

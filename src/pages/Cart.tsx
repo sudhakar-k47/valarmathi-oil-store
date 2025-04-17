@@ -5,6 +5,8 @@ import { ShoppingBasket, ChevronRight, ArrowRight } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import CartItem from '../components/cart/CartItem';
 import { useCart } from '../context/CartContext';
+import { useState, useEffect } from "react"
+
 
 const Cart = () => {
   const { cart, getCartTotal, clearCart } = useCart();
@@ -12,6 +14,10 @@ const Cart = () => {
   const shippingCost = 4.99;
   const subtotal = getCartTotal();
   const total = subtotal + (subtotal > 0 ? shippingCost : 0);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
   
   return (
     <Layout>
