@@ -37,9 +37,18 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
       className="flex flex-wrap sm:flex-nowrap items-center justify-between gap-4 py-4 border-b"
     >
       {/* Image */}
-      <div className="w-20 h-20 flex-shrink-0 bg-gray-100 rounded overflow-hidden">
-        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
-      </div>
+      <Link
+        to={`/product/${item.id}`}
+        className="text-md sm:text-sm font-serif font-medium text-olive-800 hover:text-olive-600 transition-colors"
+      >
+        <div className="w-20 h-20 flex-shrink-0 bg-gray-100 rounded overflow-hidden">
+          <img
+            src={item.image}
+            alt={item.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </Link>
 
       {/* Details */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between flex-grow gap-2 sm:gap-4 w-full">
@@ -50,7 +59,9 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
           >
             {item.name}
           </Link>
-          <p className="text-sm text-muted-foreground">Unit Price: ${item.price.toFixed(2)}</p>
+          <p className="text-sm text-muted-foreground">
+            Unit Price: ${item.price.toFixed(2)}
+          </p>
         </div>
 
         {/* Quantity Controls */}
@@ -86,7 +97,9 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
 
         {/* Price and Remove */}
         <div className="flex items-center space-x-4 min-w-[100px] justify-end">
-          <span className="font-medium text-right">${(item.price * item.quantity).toFixed(2)}</span>
+          <span className="font-medium text-right">
+            ${(item.price * item.quantity).toFixed(2)}
+          </span>
 
           <motion.button
             whileHover={{ scale: 1.1 }}
